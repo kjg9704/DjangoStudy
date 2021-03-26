@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static '/css/board/boardList.css' %}">
+<div class="container__board">
+
+    <div class="TITLE">
+        BOARD LIST
+    </div>
+
+    <div class="boardList__wrapper">
+        <ul class="boardList">
+        {% for board in boards %}
+            <a class="boardList--link" href="detail/{{board.id}}">
+                <li class="boardList__itm">
+                    <div class="boardList__itm userInfo">
+                        <div class="boardList__itm userInfo--name">user</div>
+                        <div class="boardList__itm userInfo--category"></div>
+                        <div class="boardList__itm userInfo--time"> | </div>
+                    </div>
+                    <div class="boardList__itm textInfo">
+                        <div class="boardList__itm textInfo--title">
+                            {{ board.postname }}
+                        </div>
+                        <div class="boardList__itm textInfo--text">
+                            {{ board.contents }}
+                        </div>
+                    </div>
+                </li>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="btn__wrapper">
+        <a class="writeBtn" href="{% url 'board:write' %}">WRITE</a>
+    </div>
+</div>
+{% endblock %}

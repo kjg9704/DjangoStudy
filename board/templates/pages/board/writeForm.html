@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static '/css/board/writeForm.css' %}">
+    <div class="container__writeForm">
+        <div class="write__wrapper">
+            <form class="write" method="POST">
+            {% csrf_token %}
+                <span class="TITLE">WRITE</span>
+                <input class="write__title" name="postname" type="text" placeholder="TITLE">
+                <textarea class="write__text" name="contents" placeholder="TEXT"></textarea>
+                <input class="write__submit" type="submit" value="SUBMIT">
+            </form>
+        </div>
+    </div>
+{% endblock %}

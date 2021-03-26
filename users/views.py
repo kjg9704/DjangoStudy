@@ -13,7 +13,7 @@ def login_view(request):
             login(request, user)
         else:
             print("인증실패")
-    return render(request, "users/login.html")
+    return redirect("main:index")
 
 def logout_view(request):
     logout(request)
@@ -26,9 +26,9 @@ def signup_view(request):
         password = request.POST["password"]
         firstname = request.POST["firstname"]
         lastname = request.POST["lastname"]
-        email = request.POST["email"]
+        birth = request.POST["birth"]
         student_id = request.POST["student_id"]
-        user = User.objects.create_user(username, email, password)
+        user = User.objects.create_user(username, birth, password)
         user.last_name = lastname
         user.first_name = firstname
         user.student_id = student_id

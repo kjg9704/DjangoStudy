@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static '/css/board/boardDetail.css' %}">
+    <div class="container__board">
+
+        <div class="content__wrapper">
+
+            <div class="content">
+
+                <div class="content__header">
+                    <div class="content__header info">
+                        <div class="content__header info--title">{{ board.postname }}</div>
+                        <div class="content__header info__userInfo">
+                            <div class="content__header info__userInfo--name">USER</div>
+                            <div class="content__header info__userInfo--cartegory"> |</div>
+                            <div class="content__header info__userInfo--time"> 2021.03.26</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__main">
+                    {{ board.contents }} 
+                </div>
+
+                <div class="content__footer">
+                    <div class="content__footer comment__wrapper">
+                        <div class="content__footer comment">
+
+                            <div class="comment--title">COMMENT</div>
+                            <hr class="content__footer divLine">
+
+                            <div class="comment__list__wrapper">
+                                <ul class="comment__list">
+                                    
+                                    <!--li class="comment__list__itm">
+                                        <div class="comment__list__itm comment__userInfo">
+                                            <div class="comment__userInfo--name">USER</div>
+                                            <div class="comment__userInfo--time">2021.03.21</div>
+                                            <div class="comment__action">
+                                                <a class="comment__action like" href="">LIKE</a>
+                                                <a class="comment__action edit" href="">EDIT</a>
+                                                <a class="comment__action delete" href="">DELETE</a>
+                                            </div>
+                                        </div>
+                                        <div class="comment__list__itm comment--text">TEST</div>
+
+                                        <ul class="comment__list__itm comment__subList">
+                                            <div class="comment__list__itm comment__userInfo">
+                                                <div class="comment__userInfo--name">USER</div>
+                                                <div class="comment__userInfo--time">2021.03.21</div>
+                                                <div class="comment__action">
+                                                    <a class="comment__action like" href="">LIKE</a>
+                                                    <a class="comment__action edit" href="">EDIT</a>
+                                                    <a class="comment__action delete" href="">DELETE</a>
+                                                </div>
+                                            </div>
+                                            <div class="comment__list__itm comment__text">TEST</div>
+                                        </ul>
+                                    </li-->
+                                
+                                </ul>
+                            </div>
+                            <hr class="content__footer divLine">
+
+                            <div class="comment__write__wrapper">
+                                <form class="comment__write" method="POST" action="">
+                                    <input class="comment__write--text" type="text">
+                                    <input class="comment__write--send" type="submit" value="SUBMIT">
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+{% endblock %}
