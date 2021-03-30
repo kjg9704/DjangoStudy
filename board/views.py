@@ -24,11 +24,11 @@ def board_detail(request, id):
     return render(request, 'pages/board/boardDetail.html', {'board':board})
 
 
-def board_update(request):
-    boards= Post.objects.all()
-    return redirect("board:list")
+# def board_update(request):
+#     boards= Post.objects.all()
+#     return redirect("board:list")
 
 
-def board_delete(request):
-    boards= Post.objects.all()
-    return redirect("board:list")
+# def board_delete(request):
+#     boards= Post.objects.all()
+#     return redirect("board:list")
